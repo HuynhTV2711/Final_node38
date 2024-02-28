@@ -15,7 +15,7 @@ export class UserController {
   }
 
   @Get()
-  findAll() {
+  findAll() :Promise<any> {
     return this.userService.findAll();
   }
 

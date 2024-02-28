@@ -15,7 +15,7 @@ export class JobDetailController {
   }
 
   @Get()
-  findAll() {
+  findAll(): Promise<any>  {
     return this.jobDetailService.findAll();
   }
 
