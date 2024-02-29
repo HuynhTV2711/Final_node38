@@ -4,19 +4,19 @@ import { CreateCommentDto } from './dto/create-comment.dto';
 import { UpdateCommentDto } from './dto/update-comment.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags("comment")
-@Controller('comment')
+@ApiTags("BinhLuan")
+@Controller('/api/comment')
 export class CommentController {
   constructor(private readonly commentService: CommentService) {}
 
-  @Post()
-  create(@Body() createCommentDto: CreateCommentDto) {
-    return this.commentService.create(createCommentDto);
+  @Get()
+  findAll():Promise<any> {
+    return this.commentService.findAll();
   }
 
-  @Get()
-  findAll() {
-    return this.commentService.findAll();
+  @Post("/create-comment")
+  create(@Body() createCommentDto: CreateCommentDto ) : Promise<string> {
+    return this.commentService.create(createCommentDto);
   }
 
   @Get(':id')
@@ -29,7 +29,7 @@ export class CommentController {
     return this.commentService.update(+id, updateCommentDto);
   }
 
-  @Delete(':id')
+  @Delete('/delete/:id')
   remove(@Param('id') id: string) {
     return this.commentService.remove(+id);
   }
