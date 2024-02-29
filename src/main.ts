@@ -13,8 +13,9 @@ async function bootstrap() {
  
    // apply swagger cho NestJs
    const swagger = SwaggerModule.createDocument(app, config);
-   // setup swagger với đường dẫn là api
-   const swaggerApi = SwaggerModule.setup("api", app, swagger)
+  // setup swagger với đường dẫn là /swagger
+  SwaggerModule.setup("api", app, swagger);
+  // app.use(loggerMiddleware);
   await app.listen(3000);
 }
 bootstrap();

@@ -4,8 +4,8 @@ import { CreateJobDto } from './dto/create-job.dto';
 import { UpdateJobDto } from './dto/update-job.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Job')
-@Controller('job')
+@ApiTags('CongViec')
+@Controller('/api/cong-viec')
 export class JobController {
   constructor(private readonly jobService: JobService) {}
 
