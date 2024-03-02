@@ -22,29 +22,29 @@ model BinhLuan {
 }
 
 model ChiTietLoaiCongViec {
-  id                Int           @id @default(autoincrement())
-  ten_chi_tiet      String?       @db.VarChar(50)
-  hinh_anh          String?       @db.VarChar(300)
-  ma_loai_cong_viec Int?
-  LoaiCongViec      LoaiCongViec? @relation(fields: [ma_loai_cong_viec], references: [id], map: "ChiTietLoaiCongViec_ibfk_1")
+  id           Int        @id @default(autoincrement())
+  ten_chi_tiet String?    @db.VarChar(50)
+  ma_nhom      Int?
+  NhomCTLCV    NhomCTLCV? @relation(fields: [ma_nhom], references: [id], map: "ChiTietLoaiCongViec_ibfk_1")
+  CongViec     CongViec[]
 
-  @@index([ma_loai_cong_viec], map: "ma_loai_cong_viec")
+  @@index([ma_nhom], map: "ma_nhom")
 }
 
 model CongViec {
-  id               Int            @id @default(autoincrement())
-  ten_cong_viec    String?        @db.VarChar(50)
+  id               Int                  @id @default(autoincrement())
+  ten_cong_viec    String?              @db.VarChar(50)
   danh_gia         Int?
-  gia_tien         String?        @db.VarChar(50)
-  hinh_anh         String?        @db.VarChar(300)
-  mo_ta            String?        @db.VarChar(100)
-  mo_ta_ngan       String?        @db.VarChar(50)
+  gia_tien         String?              @db.VarChar(50)
+  hinh_anh         String?              @db.VarChar(300)
+  mo_ta            String?              @db.VarChar(100)
+  mo_ta_ngan       String?              @db.VarChar(50)
   sao_cong_viec    Int?
   ma_chi_tiet_loai Int?
   nguoi_tao        Int?
   BinhLuan         BinhLuan[]
-  LoaiCongViec     LoaiCongViec?  @relation(fields: [ma_chi_tiet_loai], references: [id], map: "CongViec_ibfk_1")
-  NguoiDung        NguoiDung?     @relation(fields: [nguoi_tao], references: [id], map: "CongViec_ibfk_2")
+  LoaiCongViec     ChiTietLoaiCongViec? @relation(fields: [ma_chi_tiet_loai], references: [id], map: "CongViec_ibfk_1")
+  NguoiDung        NguoiDung?           @relation(fields: [nguoi_tao], references: [id], map: "CongViec_ibfk_2")
   ThueCongViec     ThueCongViec[]
 
   @@index([ma_chi_tiet_loai], map: "ma_chi_tiet_loai")
@@ -52,10 +52,9 @@ model CongViec {
 }
 
 model LoaiCongViec {
-  id                  Int                   @id @default(autoincrement())
-  ten_loai_cong_viec  String?               @db.VarChar(50)
-  ChiTietLoaiCongViec ChiTietLoaiCongViec[]
-  CongViec            CongViec[]
+  id                 Int         @id @default(autoincrement())
+  ten_loai_cong_viec String?     @db.VarChar(50)
+  NhomCTLCV          NhomCTLCV[]
 }
 
 model NguoiDung {
@@ -85,4 +84,15 @@ model ThueCongViec {
 
   @@index([ma_cong_viec], map: "ma_cong_viec")
   @@index([ma_nguoi_thue], map: "ma_nguoi_thue")
+}
+
+model NhomCTLCV {
+  id                  Int                   @id @default(autoincrement())
+  ten_nhom            String?               @db.VarChar(50)
+  hinh_anh            String?               @db.VarChar(300)
+  ma_loai_cong_viec   Int?
+  ChiTietLoaiCongViec ChiTietLoaiCongViec[]
+  LoaiCongViec        LoaiCongViec?         @relation(fields: [ma_loai_cong_viec], references: [id], map: "NhomCTLCV_ibfk_1")
+
+  @@index([ma_loai_cong_viec], map: "ma_loai_cong_viec")
 }
