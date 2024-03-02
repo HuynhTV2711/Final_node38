@@ -10,14 +10,12 @@ import { JobDetailModule } from './job-detail/job-detail.module';
 import { HireJobModule } from './hire-job/hire-job.module';
 import { ConfigModule } from '@nestjs/config';
 
-
 @Module({
   imports: [
     CommentModule,
     AuthModule,
     UserModule,
     JobModule,
-    SkillModule,
     TypeOfJobModule,
     JobDetailModule,
     HireJobModule,
@@ -26,8 +24,7 @@ import { ConfigModule } from '@nestjs/config';
     }),
   ],
 
-
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
