@@ -4,8 +4,8 @@ import { CreateHireJobDto } from './dto/create-hire-job.dto';
 import { UpdateHireJobDto } from './dto/update-hire-job.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags("Hire job")
-@Controller('hire-job')
+@ApiTags("ThueCongViec")
+@Controller('/api/thue-cong-viec')
 export class HireJobController {
   constructor(private readonly hireJobService: HireJobService) {}
 

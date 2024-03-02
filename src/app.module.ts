@@ -5,11 +5,11 @@ import { CommentModule } from './comment/comment.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { JobModule } from './job/job.module';
-import { SkillModule } from './skill/skill.module';
 import { TypeOfJobModule } from './type-of-job/type-of-job.module';
 import { JobDetailModule } from './job-detail/job-detail.module';
 import { HireJobModule } from './hire-job/hire-job.module';
 import { ConfigModule } from '@nestjs/config';
+
 
 @Module({
   imports: [
@@ -25,7 +25,9 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     }),
   ],
+
+
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

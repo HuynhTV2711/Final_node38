@@ -4,8 +4,8 @@ import { CreateJobDetailDto } from './dto/create-job-detail.dto';
 import { UpdateJobDetailDto } from './dto/update-job-detail.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Job details')
-@Controller('job-detail')
+@ApiTags('ChiTietLoaiCongViec')
+@Controller('/api/chi-tiet-loai-cong-viec')
 export class JobDetailController {
   constructor(private readonly jobDetailService: JobDetailService) {}
 
@@ -15,7 +15,7 @@ export class JobDetailController {
   }
 
   @Get()
-  findAll() {
+  findAll(): Promise<any>  {
     return this.jobDetailService.findAll();
   }
 
