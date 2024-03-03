@@ -14,35 +14,42 @@ export class CommentService {
     return data;
   }
 
-  async create(createCommentDto: CreateCommentDto ) : Promise<string> {
-    let newComment = {...createCommentDto};
+  async create(createCommentDto: CreateCommentDto): Promise<string> {
+    let newComment = { ...createCommentDto };
     await this.prisma.binhLuan.create({
       data: newComment
     })
-    return "Create Comment Successful"
+    return `Create Comment Successful`
   }
 
-  async findOne(id: number): Promise<any> {
+  async findOne(maCongViec: number): Promise<any> {
     let data = await this.prisma.binhLuan.findMany({
-    
+
       where: {
-        id: id
+        id: maCongViec
       }
     });
     return data;
   }
 
-  update(id: number, updateCommentDto: UpdateCommentDto) {
-    return `This action updates a #${id} comment`;
+  async update(id: number, updateCommentDto: UpdateCommentDto): Promise<string> {
+    let updateComment = { ...updateCommentDto };
+    let data = await this.prisma.binhLuan.update({
+      where: {
+        id: id
+      },
+      data: updateComment
+    });
+    return `update id:${id} comment success !`
   }
 
- async remove(id: number): Promise <any>{
-  await this.prisma.binhLuan.delete({
-    where: {
-      id: id
-    }
-  });
+  async remove(id: number): Promise<any> {
+    await this.prisma.binhLuan.delete({
+      where: {
+        id: id
+      }
+    });
 
-  return `delete comment ${id} suscessfull! `;
+    return `delete comment ${id} suscessfull! `;
   }
 }
