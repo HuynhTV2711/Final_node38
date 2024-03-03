@@ -10,12 +10,21 @@ import { JobDetailModule } from './job-detail/job-detail.module';
 import { HireJobModule } from './hire-job/hire-job.module';
 import { ConfigModule } from '@nestjs/config';
 
-
 @Module({
-  imports: [AuthModule, CommentModule, JobDetailModule, JobModule, TypeOfJobModule, UserModule, HireJobModule, ConfigModule.forRoot({
-    isGlobal: true
-  })],
+  imports: [
+    CommentModule,
+    AuthModule,
+    UserModule,
+    JobModule,
+    TypeOfJobModule,
+    JobDetailModule,
+    HireJobModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+  ],
+
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
