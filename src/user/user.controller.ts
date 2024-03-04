@@ -36,6 +36,21 @@ export class UserController {
 
   @ApiParam({ name: 'page', required: false, description: 'page number' })
   @ApiParam({ name: 'size', required: false, description: 'page size' })
+  @ApiParam({ name: 'name', required: true, description: 'name' })
+  @Get('/:page/:size/:name')
+  userPaginationSearch(
+    @Param('page') page,
+    @Param('size') size,
+    @Param('name') name,
+  ): Promise<any> {
+    let numPage = page * 1;
+    let numSize = size * 1;
+    let skip = (numPage - 1) * size;
+    return this.userService.userPaginationSearch(skip, numSize, name);
+  }
+
+  @ApiParam({ name: 'page', required: true, description: 'page number' })
+  @ApiParam({ name: 'size', required: true, description: 'page size' })
   @Get('/:page/:size')
   userPagination(@Param('page') page, @Param('size') size): Promise<any> {
     let numPage = page * 1;

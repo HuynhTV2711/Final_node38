@@ -85,6 +85,35 @@ export class UserService {
     });
     return data;
   }
+  async userPaginationSearch(
+    skip: number,
+    numSize: number,
+    name: string,
+  ): Promise<any> {
+    let data = await this.prisma.nguoiDung.findMany({
+      skip: skip,
+      take: numSize,
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        phone: true,
+        birth_day: true,
+        gender: true,
+        role: true,
+        skill: true,
+        certification: true,
+        avatar: true,
+      },
+      where: {
+        name: {
+          contains: name,
+        },
+      },
+    });
+    return data;
+  }
+
   async userPagination(skip: number, numSize: number): Promise<any> {
     let data = await this.prisma.nguoiDung.findMany({
       skip: skip,
