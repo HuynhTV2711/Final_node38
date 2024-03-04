@@ -98,7 +98,7 @@ export class AuthService {
         });
         return {
           status: 200,
-          message: 'Signup successfully',
+          message: 'Created user successfully',
         };
       } else {
         return {
