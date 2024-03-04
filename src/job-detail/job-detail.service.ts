@@ -88,6 +88,22 @@ export class JobDetailService {
     return `Create New Group Of Detail Type Of Job Successful`
   }
 
+  async upload(filename: string ,id: number,updateGroupJobDetailDto: UpdateGroupJobDetailDto) : Promise<string> {
+    let upload = { ...updateGroupJobDetailDto};
+    upload.hinh_anh = filename;
+    await this.prisma.nhomCTLCV.update({
+      where: {
+        id: id
+      },
+      data: upload
+      // data: {
+      //   // hinh_anh: filename
+      //   // add other properties to update as needed
+      // },
+    });
+    return `Upload Image Group Of Detail Job id:${id} success !`
+  }
+
   async updateGroup(id: number, updateGroupJobDetailDto: UpdateGroupJobDetailDto) : Promise<string> {
     let updateGroup = { ...updateGroupJobDetailDto};
     await this.prisma.nhomCTLCV.update({
