@@ -9,19 +9,23 @@ import { TypeOfJobModule } from './type-of-job/type-of-job.module';
 import { JobDetailModule } from './job-detail/job-detail.module';
 import { HireJobModule } from './hire-job/hire-job.module';
 import { ConfigModule } from '@nestjs/config';
+import { ServeStaticModule } from '@nestjs/serve-static';
 
 @Module({
   imports: [
-    CommentModule,
     AuthModule,
-    UserModule,
+    CommentModule,
+    JobDetailModule,
     JobModule,
     TypeOfJobModule,
-    JobDetailModule,
+    UserModule,
     HireJobModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    ServeStaticModule.forRoot({
+      rootPath: "." // /public/img/tenhinh.jpg
+    })
   ],
 
   controllers: [AppController],
