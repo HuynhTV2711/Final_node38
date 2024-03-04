@@ -61,13 +61,14 @@ model NguoiDung {
   id            Int            @id @default(autoincrement())
   name          String?        @db.VarChar(50)
   email         String?        @db.VarChar(50)
-  pass_word     String?        @db.VarChar(50)
+  pass_word     String?        @db.VarChar(300)
   phone         String?        @db.VarChar(50)
   birth_day     String?        @db.VarChar(50)
   gender        String?        @db.VarChar(10)
   role          String?        @db.VarChar(10)
   skill         String?        @db.VarChar(20)
   certification String?        @db.VarChar(100)
+  avatar        String?        @db.VarChar(100)
   BinhLuan      BinhLuan[]
   CongViec      CongViec[]
   ThueCongViec  ThueCongViec[]
