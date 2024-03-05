@@ -2,9 +2,15 @@ import { Injectable } from '@nestjs/common';
 import { CreateJobDto } from './dto/create-job.dto';
 import { UpdateJobDto } from './dto/update-job.dto';
 import { PrismaClient } from '@prisma/client';
+import * as moment from 'moment';
 
 @Injectable()
+
 export class JobService {
+  getCurrentDate(): string {
+    const currentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+    return `Current Date: ${currentDate}`;
+  }
   prisma = new PrismaClient()
 
   async create(createJobDto: CreateJobDto): Promise<string> {
@@ -14,6 +20,8 @@ export class JobService {
     })
     return `Create Job Successful`
   }
+
+
 
   async findAll(): Promise<any> {
     let data = await this.prisma.congViec.findMany({
@@ -112,7 +120,7 @@ export class JobService {
       where: {
         id: MaChiTietLoai
       }
-     
+
     })
     return data
   }
@@ -120,25 +128,79 @@ export class JobService {
 
   async getDetailJobByIdJob(MaCongViec: number): Promise<any> {
     let data = await this.prisma.congViec.findMany({
-    
-      where:{
+
+      where: {
         id: MaCongViec
       }
     })
-  
-    return data 
+
+    return data
   }
 
-  async getJobByName(TenCongViec:string) : Promise<any> {
-    let data = await this.prisma.congViec.findMany({
-      where:{
-        ten_cong_viec:{
+  async getJobByName(TenCongViec: string): Promise<any> {
+    const dataArr = [];
+    
+    const table1Data = await this.prisma.congViec.findMany({
+      where: {
+        ten_cong_viec: {
           contains: TenCongViec
-        }
+        },
+
       }
     })
-  
-    return data 
+
+    const table2Data = await this.prisma.chiTietLoaiCongViec.findMany({
+      where: { id: { in: table1Data.map(item => item.ma_chi_tiet_loai) } },
+      // ... your select options
+      // select:{
+
+      //  ma_nhom:true,
+      //   ten_chi_tiet:true,
+      // }
+    });
+
+    const table3Data = await this.prisma.nhomCTLCV.findMany({
+      where: { id: { in: table2Data.map(item => item.ma_nhom) } },
+      // ... your select options
+      select: {
+        ma_loai_cong_viec: true,
+        ten_nhom: true
+      }
+    });
+
+    const table4Data = await this.prisma.loaiCongViec.findMany({
+      where: { id: { in: table3Data.map(item => item.ma_loai_cong_viec) } },
+      // ... your select options
+      select: {
+        ten_loai_cong_viec: true
+      }
+    });
+
+    const table5Data = await this.prisma.nguoiDung.findMany({
+      where: { id: { in: table1Data.map(item => item.nguoi_tao) } },
+      // ... your select options
+      select: {
+        name: true,
+        avatar: true,
+      }
+    });
+
+    
+    const finalData = table1Data.map(item1 => ({
+      congViec: {
+        ...item1
+      },
+      tenLoaiCongViec: table4Data[0].ten_loai_cong_viec,
+      tenNhomChiTietLoai: table3Data[0].ten_nhom,
+      tenChiTietLoai: table2Data[0].ten_chi_tiet,
+      tenNguoiTao: table5Data[0].name,
+      avatar: table5Data[0].avatar
+      //Continue adding nested data from other tables
+    }));
+
+   
+     let finalTime = {...finalData, dateTime: moment().format('YYYY-MM-DD HH:mm:ss')};
+    return finalTime
 
   }
 }
