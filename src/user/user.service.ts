@@ -48,13 +48,15 @@ export class UserService {
   }
 
   async update(body: UpdateUserDto, id: number): Promise<any> {
+    let updateUser = { ...body };
     await this.prisma.nguoiDung.update({
       where: {
         id: id,
       },
+      data: updateUser,
     });
 
-    return `delete user ${id} successfull! `;
+    return `update user ${id} successfull! `;
   }
 
   async findAll(): Promise<any> {
