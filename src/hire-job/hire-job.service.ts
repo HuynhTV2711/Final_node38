@@ -7,8 +7,24 @@ import { PrismaClient } from '@prisma/client';
 export class HireJobService {
   prisma = new PrismaClient();
 
-  create(createHireJobDto: CreateHireJobDto) {
-    return 'This action adds a new hireJob';
+  async create(createHireJobDto: CreateHireJobDto): Promise<any> {
+    let newData = { ...createHireJobDto };
+    await this.prisma.thueCongViec.create({
+      data: newData,
+    });
+    return 'Create hire job successfully!';
+  }
+
+  async update(body: UpdateHireJobDto, id: number): Promise<any> {
+    let updateHireJob = { ...body };
+    await this.prisma.thueCongViec.update({
+      where: {
+        id: id,
+      },
+      data: updateHireJob,
+    });
+
+    return `Update hire job ${id} successfully! `;
   }
 
   async findAll() {
@@ -32,10 +48,6 @@ export class HireJobService {
     return data;
   }
 
-  update(id: number, updateHireJobDto: UpdateHireJobDto) {
-    return `This action updates a #${id} hireJob`;
-  }
-
   async remove(id: number): Promise<any> {
     await this.prisma.thueCongViec.delete({
       where: {
@@ -43,6 +55,6 @@ export class HireJobService {
       },
     });
 
-    return `delete hire job ${id} successfull! `;
+    return `delete hire job ${id} successfully! `;
   }
 }
