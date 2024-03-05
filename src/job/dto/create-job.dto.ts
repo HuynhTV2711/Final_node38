@@ -18,6 +18,6 @@ export class CreateJobDto {
     @ApiProperty()
 	ma_chi_tiet_loai:number
     @ApiProperty()
-    nguoi_tao :string
+    nguoi_tao :number
     
 }

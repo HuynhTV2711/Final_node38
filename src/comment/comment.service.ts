@@ -34,7 +34,7 @@ export class CommentService {
 
   async update(id: number, updateCommentDto: UpdateCommentDto): Promise<string> {
     let updateComment = { ...updateCommentDto };
-    let data = await this.prisma.binhLuan.update({
+     await this.prisma.binhLuan.update({
       where: {
         id: id
       },
