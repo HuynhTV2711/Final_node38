@@ -57,7 +57,7 @@ export class JobDetailController {
   }
 
    @ApiParam({name: "MaNhomLoaiCongViec", required: true, description:"MaNhomLoaiCongViec"})
-   @Put("/upload-hinh-nhom-loai-cong-viec/:MaNhomLoaiCongViec")
+   @Post("/upload-hinh-nhom-loai-cong-viec/:MaNhomLoaiCongViec")
   @ApiConsumes('multipart/form-data') // Specify the media type for file upload
   @ApiBody({
     description: 'Upload a file',
@@ -90,25 +90,5 @@ export class JobDetailController {
     return this.jobDetailService.updateGroup(+id,updateGroupJobDetailDto);
    }
 
-   @Post('file')
-   @UseInterceptors(FileInterceptor('file'))
-   @ApiConsumes('multipart/form-data') // Specify the media type for file upload
-   @ApiBody({
-     description: 'Upload a file',
-     type: 'multipart/form-data',
-     schema: {
-       type: 'object',
-       properties: {
-         file: {
-           type: 'string',
-           format: 'binary',
-         },
-       },
-     },
-   })
-   async uploadFile(@UploadedFile() file: Express.Multer.File) {
-     console.log(file); // Handle the file as needed
-     return { filename: file.filename };
-   }
 
 }

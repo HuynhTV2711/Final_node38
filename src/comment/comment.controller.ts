@@ -1,13 +1,15 @@
-import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put, UseGuards } from '@nestjs/common';
 import { CommentService } from './comment.service';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { UpdateCommentDto } from './dto/update-comment.dto';
-import { ApiParam, ApiTags } from '@nestjs/swagger';
+import { ApiHeader, ApiParam, ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 @ApiTags("BinhLuan")
 @Controller('/api/binh-luan')
 export class CommentController {
   constructor(private readonly commentService: CommentService) { }
+
 
   @Get()
   findAll(): Promise<any> {
@@ -22,6 +24,8 @@ export class CommentController {
 
 
   @ApiParam({ name: "id", required: true, description: "id" })
+  @ApiHeader({ name: "token", required: true, description: "token" })
+  //@UseGuards(AuthGuard("jwt")) 
   @Put(':id')
   update(@Param('id') id: string, @Body() updateCommentDto: UpdateCommentDto): Promise<string> {
     return this.commentService.update(+id, updateCommentDto);
