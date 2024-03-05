@@ -24,8 +24,8 @@ import { ServeStaticModule } from '@nestjs/serve-static';
       isGlobal: true,
     }),
     ServeStaticModule.forRoot({
-      rootPath: "." // /public/img/tenhinh.jpg
-    })
+      rootPath: '.', // /public/img/tenhinh.jpg
+    }),
   ],
 
   controllers: [AppController],

@@ -58,6 +58,21 @@ export class UserService {
 
     return `update user ${id} successfull! `;
   }
+  async upload(
+    filename: string,
+    id: number,
+    updateUser: UpdateUserDto,
+  ): Promise<string> {
+    let upload = { ...updateUser };
+    upload.avatar = filename;
+    await this.prisma.nguoiDung.update({
+      where: {
+        id: id,
+      },
+      data: upload,
+    });
+    return `Upload avatar id:${id} success !`;
+  }
 
   async findAll(): Promise<any> {
     let data = await this.prisma.nguoiDung.findMany({

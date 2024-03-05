@@ -7,11 +7,15 @@ import {
   Param,
   Delete,
   Put,
+  UseInterceptors,
+  UploadedFile,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { ApiBody, ApiParam, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiConsumes, ApiParam, ApiTags } from '@nestjs/swagger';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { diskStorage } from 'multer';
 
 @ApiTags('NguoiDung')
 @Controller('/users')
@@ -71,5 +75,38 @@ export class UserController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.userService.remove(+id);
+  }
+  @ApiParam({ name: 'id', required: true, description: 'id' })
+  @Post('upload-avatar/:id')
+  @ApiConsumes('multipart/form-data') // Specify the media type for file upload
+  @ApiBody({
+    description: 'Upload a file',
+    type: 'multipart/form-data',
+    schema: {
+      type: 'object',
+      properties: {
+        file: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    },
+  })
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: process.cwd() + '/public/img',
+        filename: (req, file, callback) => {
+          callback(null, new Date().getTime() + `${file.originalname}`);
+        },
+      }),
+    }),
+  )
+  upload(
+    @UploadedFile('file') file,
+    @Param('id') id: number,
+    @Body() updateUserDto: UpdateUserDto,
+  ): Promise<string> {
+    return this.userService.upload(file.filename, +id, updateUserDto);
   }
 }
