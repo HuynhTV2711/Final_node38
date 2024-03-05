@@ -47,6 +47,16 @@ export class UserService {
     }
   }
 
+  async update(body: UpdateUserDto, id: number): Promise<any> {
+    await this.prisma.nguoiDung.update({
+      where: {
+        id: id,
+      },
+    });
+
+    return `delete user ${id} successfull! `;
+  }
+
   async findAll(): Promise<any> {
     let data = await this.prisma.nguoiDung.findMany({
       select: {
