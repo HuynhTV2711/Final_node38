@@ -7,7 +7,7 @@ import { PrismaClient } from '@prisma/client';
 export class HireJobService {
   prisma = new PrismaClient();
 
-  async create(createHireJobDto: CreateHireJobDto): Promise<any> {
+  async create(createHireJobDto: CreateHireJobDto): Promise<string> {
     let newData = { ...createHireJobDto };
     await this.prisma.thueCongViec.create({
       data: newData,
@@ -15,7 +15,7 @@ export class HireJobService {
     return 'Create hire job successfully!';
   }
 
-  async update(body: UpdateHireJobDto, id: number): Promise<any> {
+  async update(body: UpdateHireJobDto, id: number): Promise<string> {
     let updateHireJob = { ...body };
     await this.prisma.thueCongViec.update({
       where: {
@@ -48,7 +48,7 @@ export class HireJobService {
     return data;
   }
 
-  async remove(id: number): Promise<any> {
+  async remove(id: number): Promise<string> {
     await this.prisma.thueCongViec.delete({
       where: {
         id: id,
@@ -56,5 +56,16 @@ export class HireJobService {
     });
 
     return `delete hire job ${id} successfully! `;
+  }
+  async hoanThanhCongViec(ma_thue_cong_viec: number): Promise<string> {
+    let newData = { hoan_thanh: true };
+    await this.prisma.thueCongViec.update({
+      where: {
+        id: ma_thue_cong_viec,
+      },
+      data: newData,
+    });
+
+    return `Job ${ma_thue_cong_viec} successfully`;
   }
 }
