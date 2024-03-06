@@ -25,7 +25,7 @@ export class HireJobController {
   @UseGuards(AuthGuard('jwt'))
   @ApiBody({ type: CreateHireJobDto })
   @Post('/create-hire-job')
-  create(@Body() createHireJobDto: CreateHireJobDto): Promise<any> {
+  create(@Body() createHireJobDto: CreateHireJobDto): Promise<string> {
     return this.hireJobService.create(createHireJobDto);
   }
 
@@ -34,7 +34,10 @@ export class HireJobController {
   @ApiBody({ type: UpdateHireJobDto })
   @ApiParam({ name: 'id', required: true, description: 'id' })
   @Put('/update-hire-job/:id')
-  update(@Body() body: UpdateHireJobDto, @Param('id') id: string) {
+  update(
+    @Body() body: UpdateHireJobDto,
+    @Param('id') id: string,
+  ): Promise<string> {
     return this.hireJobService.update(body, +id);
   }
 
@@ -72,5 +75,15 @@ export class HireJobController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.hireJobService.remove(+id);
+  }
+
+  @ApiParam({
+    name: 'ma_thue_cong_viec',
+    required: true,
+    description: 'Mã thuê công việc',
+  })
+  @Post('/hoan-thanh-cong-viec/:ma_thue_cong_viec')
+  hoanThanhCongViec(@Param('ma_thue_cong_viec') ma_thue_cong_viec: string) {
+    return this.hireJobService.hoanThanhCongViec(+ma_thue_cong_viec);
   }
 }

@@ -23,7 +23,7 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
   @ApiBody({ type: loginDTO })
   @Post('/login')
-  async login(@Body() body, @Res() res): Promise<any> {
+  async login(@Body() body: loginDTO, @Res() res): Promise<any> {
     let data = await this.authService.login(body);
     res.status(data.status).json(data);
   }
@@ -32,7 +32,7 @@ export class AuthController {
   @UseGuards(AuthGuard('jwt'))
   @ApiBody({ type: SignUpDto })
   @Post('/create-user')
-  async create(@Body() body, @Res() res): Promise<any> {
+  async create(@Body() body: SignUpDto, @Res() res): Promise<any> {
     let data = await this.authService.signUp(body);
     res.status(data.status).json(data);
   }
