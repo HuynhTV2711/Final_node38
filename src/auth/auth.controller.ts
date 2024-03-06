@@ -8,11 +8,14 @@ import {
   Delete,
   Res,
   Req,
+  UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { ApiBody, ApiParam, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiBody, ApiParam, ApiTags } from '@nestjs/swagger';
 import loginDTO from './dto/login.dto';
 import { SignUpDto } from './dto/signup.dto';
+import { AuthGuard } from '@nestjs/passport';
+import { RoleGuards } from 'src/strategy/role.stratey';
 
 @ApiTags('Auth')
 @Controller('auth')
@@ -24,6 +27,9 @@ export class AuthController {
     let data = await this.authService.login(body);
     res.status(data.status).json(data);
   }
+  @ApiBearerAuth()
+  @UseGuards(RoleGuards)
+  @UseGuards(AuthGuard('jwt'))
   @ApiBody({ type: SignUpDto })
   @Post('/create-user')
   async create(@Body() body, @Res() res): Promise<any> {
