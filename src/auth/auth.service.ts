@@ -37,7 +37,7 @@ export class AuthService {
           return {
             status: 200,
             message: 'Login successfully!',
-            data: token,
+            token: token,
           };
         } else {
           return {
