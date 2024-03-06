@@ -8,6 +8,7 @@ import {
   Delete,
   Put,
   UseGuards,
+  Req,
 } from '@nestjs/common';
 import { HireJobService } from './hire-job.service';
 import { CreateHireJobDto } from './dto/create-hire-job.dto';
@@ -50,6 +51,14 @@ export class HireJobController {
 
   @ApiBearerAuth()
   @UseGuards(AuthGuard('jwt'))
+  @Get('/lay-danh-sach-da-thue')
+  findAllByUserID(@Req() req) {
+    let id = req.user.user_id;
+    return this.hireJobService.findAllByUserID(+id);
+  }
+
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard('jwt'))
   @ApiParam({ name: 'page', required: true, description: 'page number' })
   @ApiParam({ name: 'size', required: true, description: 'page size' })
   @Get('/:page/:size')
@@ -77,6 +86,8 @@ export class HireJobController {
     return this.hireJobService.remove(+id);
   }
 
+  @ApiBearerAuth()
+  @UseGuards(AuthGuard('jwt'))
   @ApiParam({
     name: 'ma_thue_cong_viec',
     required: true,
