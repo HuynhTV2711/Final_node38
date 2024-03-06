@@ -8,6 +8,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Đồ án cuối khóa')
     .setDescription('Đây là list API về fiverr')
+    .addBearerAuth()
     .setVersion('1.0')
     .build();
 
