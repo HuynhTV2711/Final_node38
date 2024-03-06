@@ -3,7 +3,7 @@ import { IsEmail, IsNotEmpty } from 'class-validator';
 
 export default class loginDTO {
   @ApiProperty()
-  @IsEmail()
+  // @IsEmail()
   email: string;
   @ApiProperty()
   @IsNotEmpty()

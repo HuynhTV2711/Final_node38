@@ -32,6 +32,15 @@ export class HireJobService {
     return data;
   }
 
+  async findAllByUserID(id: number) {
+    let data = await this.prisma.thueCongViec.findMany({
+      where: {
+        ma_nguoi_thue: id,
+      },
+    });
+    return data;
+  }
+
   async hireJobPagination(skip: number, numSize: number): Promise<any> {
     let data = await this.prisma.thueCongViec.findMany({
       skip: skip,
