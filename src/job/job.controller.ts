@@ -93,7 +93,7 @@ upload(@UploadedFile("file") file,@Param('MaCongViec') id: number, @Body() updat
  @ApiParam({name: "MaChiTietLoai", required: true, description:"MaChiTietLoaiCongViec"})
  @Get("/lay-cong-viec-theo-chi-tiet-loai/:MaChiTietLoai")
  getJobByLoai(@Param('MaChiTietLoai') MaChiTietLoai: number) : Promise<any>{
-   return this.jobService.getJobByLoai(+MaChiTietLoai);
+   return this.jobService.getJobByDetailLoai(+MaChiTietLoai);
  }
 
  @ApiParam({name: "MaCongViec", required: true, description:"MaCongViec"})
