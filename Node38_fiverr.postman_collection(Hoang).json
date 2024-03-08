@@ -1,0 +1,1250 @@
+{
+	"info": {
+		"_postman_id": "6baf1371-d935-4fbb-9b59-b6467e79bc18",
+		"name": "Node38_fiverr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11721033"
+	},
+	"item": [
+		{
+			"name": "chitietloaicongviec",
+			"item": [
+				{
+					"name": "/api/chi-tiet-loai-cong-viec",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/chi-tiet-loai-cong-viec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"chi-tiet-loai-cong-viec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/chi-tiet-loai-cong-viec",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ten_chi_tiet\": \"Design Poster\",\r\n  \"ma_nhom\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/chi-tiet-loai-cong-viec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"chi-tiet-loai-cong-viec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/chi-tiet-loai-cong-viec/phan-trang-tim-kiem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/chi-tiet-loai-cong-viec/phan-trang-tim-kiem?page=1&size=3&keyword=sale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"chi-tiet-loai-cong-viec",
+								"phan-trang-tim-kiem"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "keyword",
+									"value": "sale"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/chi-tiet-loai-cong-viec/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/chi-tiet-loai-cong-viec/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"chi-tiet-loai-cong-viec",
+								":id"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "sale",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/chi-tiet-loai-cong-viec/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ten_chi_tiet\": \"Design Poster Shoppe\",\r\n  \"ma_nhom\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/chi-tiet-loai-cong-viec/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"chi-tiet-loai-cong-viec",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/chi-tiet-loai-cong-viec/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/chi-tiet-loai-cong-viec/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"chi-tiet-loai-cong-viec",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/chi-tiet-loai-cong-viec/them-nhom-chi-tiet-loai",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ten_nhom\": \"Coding Phone\",\r\n  \"hinh_anh\": \"image8.jpg\",\r\n  \"ma_loai_cong_viec\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/chi-tiet-loai-cong-viec/them-nhom-chi-tiet-loai",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"chi-tiet-loai-cong-viec",
+								"them-nhom-chi-tiet-loai"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/chi-tiet-loai-cong-viec/upload-hinh-nhom-loai-cong-viec/{MaNhomLoaiCongViec}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ASUS.000/Downloads/Home_(2015_film)_poster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/chi-tiet-loai-cong-viec/upload-hinh-nhom-loai-cong-viec/:MaNhomLoaiCongViec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"chi-tiet-loai-cong-viec",
+								"upload-hinh-nhom-loai-cong-viec",
+								":MaNhomLoaiCongViec"
+							],
+							"variable": [
+								{
+									"key": "MaNhomLoaiCongViec",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/chi-tiet-loai-cong-viec/sua-nhom-chi-tiet-loai/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ten_nhom\": \"Coding App\",\r\n  \"hinh_anh\": \"1709893180743Home_(2015_film)_poster.jpg\",\r\n  \"ma_loai_cong_viec\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/chi-tiet-loai-cong-viec/sua-nhom-chi-tiet-loai/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"chi-tiet-loai-cong-viec",
+								"sua-nhom-chi-tiet-loai",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "binhLuan",
+			"item": [
+				{
+					"name": "/api/binh-luan",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ma_cong_viec\": 6,\r\n  \"ma_nguoi_binh_luan\": 3,\r\n  \"ngay_binh_luan\": \"05/11/1999\",\r\n  \"noi_dung\": \"ok\",\r\n  \"sao_binh_luan\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/binh-luan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"binh-luan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/binh-luan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ma_cong_viec\": 6,\r\n  \"ma_nguoi_binh_luan\": 3,\r\n  \"ngay_binh_luan\": \"2024-03-08T12:30:45.678Z\",\r\n  \"noi_dung\": \"ok\",\r\n  \"sao_binh_luan\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/binh-luan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"binh-luan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/binh-luan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ma_cong_viec\": 6,\r\n  \"ma_nguoi_binh_luan\": 3,\r\n  \"ngay_binh_luan\": \"2024-03-08T12:30:45.678Z\",\r\n  \"noi_dung\": \"oklala\",\r\n  \"sao_binh_luan\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/binh-luan/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"binh-luan",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/binh-luan/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/binh-luan/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"binh-luan",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CongViec",
+			"item": [
+				{
+					"name": "/api/binh-luan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/binh-luan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"binh-luan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ten_cong_viec\": \"Chăm sóc khách hàng tiki\",\r\n  \"danh_gia\": 5,\r\n  \"gia_tien\": \"7000000\",\r\n  \"hinh_anh\": \"image10.jpg\",\r\n  \"mo_ta\": \"Chăm sóc khách hàng tiki\",\r\n  \"mo_ta_ngan\": \"CSKH tiki\",\r\n  \"sao_cong_viec\": 5,\r\n  \"ma_chi_tiet_loai\": 10,\r\n  \"nguoi_tao\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cong-viec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cong-viec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/lay-cong-viec/{id}",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/phan-trang-tim-kiem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cong-viec/phan-trang-tim-kiem?page=1&size=3&keyword=sale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cong-viec",
+								"phan-trang-tim-kiem"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "keyword",
+									"value": "sale"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/phan-trang-tim-kiem",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cong-viec/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cong-viec",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/upload-hinh-cong-viec/{MaCongViec}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ASUS.000/Downloads/Home_(2015_film)_poster.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cong-viec/upload-hinh-cong-viec/:MaCongViec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cong-viec",
+								"upload-hinh-cong-viec",
+								":MaCongViec"
+							],
+							"variable": [
+								{
+									"key": "MaCongViec",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/lay-menu-loai-cong-viec",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cong-viec/lay-menu-loai-cong-viec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cong-viec",
+								"lay-menu-loai-cong-viec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/lay-chi-tiet-loai-cong-viec/{MaLoaiCongViec}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cong-viec/lay-chi-tiet-loai-cong-viec/:MaLoaiCongViec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cong-viec",
+								"lay-chi-tiet-loai-cong-viec",
+								":MaLoaiCongViec"
+							],
+							"variable": [
+								{
+									"key": "MaLoaiCongViec",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/lay-cong-viec-theo-chi-tiet-loai/{MaChiTietLoai}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cong-viec/lay-cong-viec-theo-chi-tiet-loai/:MaChiTietLoai",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cong-viec",
+								"lay-cong-viec-theo-chi-tiet-loai",
+								":MaChiTietLoai"
+							],
+							"variable": [
+								{
+									"key": "MaChiTietLoai",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/lay-cong-viec-chi-tiet/{MaCongViec}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cong-viec/lay-cong-viec-chi-tiet/:MaCongViec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cong-viec",
+								"lay-cong-viec-chi-tiet",
+								":MaCongViec"
+							],
+							"variable": [
+								{
+									"key": "MaCongViec",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/cong-viec/lay-danh-sach-cong-viec-theo-ten/{TenCongViec}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cong-viec/lay-danh-sach-cong-viec-theo-ten/:TenCongViec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cong-viec",
+								"lay-danh-sach-cong-viec-theo-ten",
+								":TenCongViec"
+							],
+							"variable": [
+								{
+									"key": "TenCongViec",
+									"value": "sale"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "loaicv",
+			"item": [
+				{
+					"name": "/api/loai-cong-viec",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/loai-cong-viec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"loai-cong-viec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/loai-cong-viec",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ten_loai_cong_viec\": \"Writter\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/loai-cong-viec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"loai-cong-viec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/loai-cong-viec/phan-trang-tim-kiem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/loai-cong-viec/phan-trang-tim-kiem?page=1&size=3&keyword=chuyên viên",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"loai-cong-viec",
+								"phan-trang-tim-kiem"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "keyword",
+									"value": "chuyên viên"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/loai-cong-viec/{id}",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "/api/loai-cong-viec/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"ten_loai_cong_viec\": \"Teaching ielt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/loai-cong-viec/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"loai-cong-viec",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/loai-cong-viec/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMiwiZW1haWwiOiJidWxvbmcxMjJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5ODMzMDE1LCJleHAiOjE4MDQ1MDU4MTV9.7BNedmvrC1NGGsVpx3GjxumYYRaR5d5de8QA7095aVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/loai-cong-viec/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"loai-cong-viec",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"bulong122@gmail.com\",\r\n  \"name\": \"Lê Hoàng Anh\",\r\n  \"pass_word\": \"bulong122\",\r\n  \"role\": \"user\",\r\n  \"phone\": \"0767608842\",\r\n  \"birth_day\": \"05/11/1999\",\r\n  \"gender\": \"male\",\r\n  \"skill\": \"string\",\r\n  \"certification\": \"string\",\r\n  \"avatar\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/create-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"bulong122@gmail.com\",\r\n  \"pass_word\": \"bulong133\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
