@@ -5,7 +5,6 @@ import { UpdateJobDto } from './dto/update-job.dto';
 import { ApiBearerAuth, ApiBody, ApiConsumes, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-import { query } from 'express';
 import { AuthGuard } from '@nestjs/passport';
 import { RoleGuards } from 'src/strategy/role.stratey';
 

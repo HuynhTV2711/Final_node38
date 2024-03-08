@@ -4,7 +4,7 @@ import { UpdateJobDetailDto } from './dto/update-job-detail.dto';
 import { PrismaClient } from '@prisma/client';
 import { CreateGroupJobDetail } from './dto/creat-group-job.dto';
 import { UpdateGroupJobDetailDto } from './dto/update-group-job.dto';
-
+import * as moment from 'moment';
 
 @Injectable()
 export class JobDetailService {
@@ -18,7 +18,14 @@ export class JobDetailService {
       }
     });
   
-      return data;
+    const finalData = {
+      content: {
+          ...data
+      },
+      dateTime: moment().format('YYYY-MM-DD HH:mm:ss')
+
+  };
+  return finalData
   }
 
   async create(createJobDetailDto: CreateJobDetailDto) :Promise<string> {
@@ -44,7 +51,15 @@ export class JobDetailService {
         ChiTietLoaiCongViec: true
       }
     });
-    return data;
+
+    const finalData = {
+      content: {
+          ...data
+      },
+      dateTime: moment().format('YYYY-MM-DD HH:mm:ss')
+
+  };
+  return finalData
   }
 
  async findOne(id: number) : Promise<any>{
@@ -57,7 +72,14 @@ export class JobDetailService {
     }
   });
 
-    return data;
+   const finalData = {
+      content: {
+          ...data
+      },
+      dateTime: moment().format('YYYY-MM-DD HH:mm:ss')
+
+  };
+  return finalData
   }
 
  async update(id: number, updateJobDetailDto: UpdateJobDetailDto) : Promise<string> {
