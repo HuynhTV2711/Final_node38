@@ -27,11 +27,9 @@ export class AuthController {
     let data = await this.authService.login(body);
     res.status(data.status).json(data);
   }
-  @ApiBearerAuth()
-  @UseGuards(RoleGuards)
-  @UseGuards(AuthGuard('jwt'))
+
   @ApiBody({ type: SignUpDto })
-  @Post('/create-user')
+  @Post('/sign-up')
   async create(@Body() body: SignUpDto, @Res() res): Promise<any> {
     let data = await this.authService.signUp(body);
     res.status(data.status).json(data);

@@ -38,7 +38,6 @@ export class AuthService {
             status: 200,
             message: 'Login successfully!',
             token: token,
-            payload: payload,
           };
         } else {
           return {
@@ -61,18 +60,7 @@ export class AuthService {
   }
   async signUp(body: SignUpDto): Promise<any> {
     try {
-      let {
-        email,
-        pass_word,
-        name,
-        role,
-        phone,
-        birth_day,
-        gender,
-        skill,
-        certification,
-        avatar,
-      } = body;
+      let { email, pass_word, name } = body;
       let checkEmail = await this.prisma.nguoiDung.findFirst({
         where: {
           email: email,
@@ -83,23 +71,17 @@ export class AuthService {
         let encodePass = bcrypt.hashSync(pass_word, 2);
         let newAvatar = initAvatar(name);
         let newUser = {
-          email,
-          pass_word: encodePass,
-          name,
-          role,
-          phone,
-          birth_day,
-          gender,
-          skill,
-          certification,
+          ...body,
           avatar: newAvatar,
+          role: 'user',
+          pass_word: encodePass,
         };
         await this.prisma.nguoiDung.create({
           data: newUser,
         });
         return {
           status: 200,
-          message: 'Created user successfully',
+          message: 'Signup successfully',
         };
       } else {
         return {
