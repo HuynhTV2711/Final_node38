@@ -1,0 +1,557 @@
+{
+	"info": {
+		"_postman_id": "773a94e0-7f04-413c-9490-d0f54238e5a8",
+		"name": "CuoiKhoa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Nguoi dung",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDk5NTM3NDQsImV4cCI6MTgwNDYyNjU0NH0.tLjdH7Dd-E_tBMLRiDoXeKffSe71EhV3KbrGYWOu6dc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"huynhna@gmail.com\",\r\n  \"name\": \"Tran Van Huynhs\",\r\n  \"pass_word\": \"1234\",\r\n  \"phone\": \"0352014211\",\r\n  \"role\": \"admin\",\r\n  \"birth_day\": \"27/11/1997\",\r\n  \"gender\": \"male\",\r\n  \"skill\": \"fst\",\r\n  \"certification\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/create-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"create-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJzdHJpbmciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk5NTM1OTQsImV4cCI6MTgwNDYyNjM5NH0.2haC94PsUz8BUJOLaHR3hZYzNfla83D5-hRgiPuXH_k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJzdHJpbmciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk5NTM1OTQsImV4cCI6MTgwNDYyNjM5NH0.2haC94PsUz8BUJOLaHR3hZYzNfla83D5-hRgiPuXH_k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/1/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"1",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search user pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJzdHJpbmciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk5NTM1OTQsImV4cCI6MTgwNDYyNjM5NH0.2haC94PsUz8BUJOLaHR3hZYzNfla83D5-hRgiPuXH_k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/1/5/Nguyễn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"1",
+								"5",
+								"Nguyễn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJzdHJpbmciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk5NTM1OTQsImV4cCI6MTgwNDYyNjM5NH0.2haC94PsUz8BUJOLaHR3hZYzNfla83D5-hRgiPuXH_k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJzdHJpbmciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk5NTM1OTQsImV4cCI6MTgwNDYyNjM5NH0.2haC94PsUz8BUJOLaHR3hZYzNfla83D5-hRgiPuXH_k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJzdHJpbmciLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk5NTM1OTQsImV4cCI6MTgwNDYyNjM5NH0.2haC94PsUz8BUJOLaHR3hZYzNfla83D5-hRgiPuXH_k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"strHuynhtv2711@gmail.coming\",\r\n  \"name\": \"Văn Huỳnh\",\r\n  \"pass_word\": \"string\",\r\n  \"role\": \"admin\",\r\n  \"phone\": \"123123123\",\r\n  \"birth_day\": \"27/11/1997\",\r\n  \"gender\": \"male\",\r\n  \"skill\": \"string\",\r\n  \"certification\": \"string\",\r\n  \"avatar\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/update-user/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"update-user",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload avatar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5OTU3OTU5LCJleHAiOjE4MDQ2MzA3NTl9.EZ51YGCRyWGtWgukS3N2t-2JGMtpBo9C9NCC7iSK5LI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Huynh/Downloads/Capture.PNG"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/upload-avatar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"upload-avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"stringaaa@gmail.com\",\r\n  \"pass_word\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"huynhsa@gmail.com\",\r\n  \"name\": \"Tran Van Huynhs\",\r\n  \"pass_word\": \"1234\",\r\n  \"phone\": \"0352014211\",\r\n  \"birth_day\": \"27/11/1997\",\r\n  \"gender\": \"male\",\r\n  \"skill\": \"fst\",\r\n  \"certification\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Thue cong viec",
+			"item": [
+				{
+					"name": "Get all thue cong viec",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDk5NTM3NDQsImV4cCI6MTgwNDYyNjU0NH0.tLjdH7Dd-E_tBMLRiDoXeKffSe71EhV3KbrGYWOu6dc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/thue-cong-viec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"thue-cong-viec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lay Danh sach da thue",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDk5NTM3NDQsImV4cCI6MTgwNDYyNjU0NH0.tLjdH7Dd-E_tBMLRiDoXeKffSe71EhV3KbrGYWOu6dc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/thue-cong-viec/lay-danh-sach-da-thue",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"thue-cong-viec",
+								"lay-danh-sach-da-thue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thue cong viec pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDk5NTM3NDQsImV4cCI6MTgwNDYyNjU0NH0.tLjdH7Dd-E_tBMLRiDoXeKffSe71EhV3KbrGYWOu6dc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/thue-cong-viec/1/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"thue-cong-viec",
+								"1",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chi tiet thue cong viec",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5OTU1NzE4LCJleHAiOjE4MDQ2Mjg1MTh9.TYahOCKowjbBFgmFuhLnFOwIo7CBD5TYsyYH_0Uhccc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/thue-cong-viec/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"thue-cong-viec",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete thue cong viec",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5OTU1NzE4LCJleHAiOjE4MDQ2Mjg1MTh9.TYahOCKowjbBFgmFuhLnFOwIo7CBD5TYsyYH_0Uhccc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/thue-cong-viec/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"thue-cong-viec",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hoan thanh cong viec",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5OTU1NzE4LCJleHAiOjE4MDQ2Mjg1MTh9.TYahOCKowjbBFgmFuhLnFOwIo7CBD5TYsyYH_0Uhccc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/thue-cong-viec/hoan-thanh-cong-viec/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"thue-cong-viec",
+								"hoan-thanh-cong-viec",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5OTU1NzE4LCJleHAiOjE4MDQ2Mjg1MTh9.TYahOCKowjbBFgmFuhLnFOwIo7CBD5TYsyYH_0Uhccc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ma_cong_viec\": 6,\r\n  \"ma_nguoi_thue\": 4,\r\n  \"ngay_thue\": \"2024-03-09T03:38:30Z\",\r\n  \"hoan_thanh\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/thue-cong-viec/update-hire-job/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"thue-cong-viec",
+								"update-hire-job",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Them thue cong viec",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwiZW1haWwiOiJzdHJpbmdhYWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5OTU1NzE4LCJleHAiOjE4MDQ2Mjg1MTh9.TYahOCKowjbBFgmFuhLnFOwIo7CBD5TYsyYH_0Uhccc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ma_cong_viec\": 4,\r\n  \"ma_nguoi_thue\": 22,\r\n  \"ngay_thue\": \"2024-03-09T03:38:30Z\",\r\n  \"hoan_thanh\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/thue-cong-viec/create-hire-job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"thue-cong-viec",
+								"create-hire-job"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

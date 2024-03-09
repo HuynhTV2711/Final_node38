@@ -1189,13 +1189,13 @@
 			]
 		},
 		{
-			"name": "register",
+			"name": "signup",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"bulong122@gmail.com\",\r\n  \"name\": \"Lê Hoàng Anh\",\r\n  \"pass_word\": \"bulong122\",\r\n  \"role\": \"user\",\r\n  \"phone\": \"0767608842\",\r\n  \"birth_day\": \"05/11/1999\",\r\n  \"gender\": \"male\",\r\n  \"skill\": \"string\",\r\n  \"certification\": \"string\",\r\n  \"avatar\": \"string\"\r\n}",
+					"raw": "{\r\n  \"email\": \"bulong133@gmail.com\",\r\n  \"name\": \"Lê Hoàng Anh\",\r\n  \"pass_word\": \"bulong122\",\r\n  \"role\": \"user\",\r\n  \"phone\": \"0767608842\",\r\n  \"birth_day\": \"05/11/1999\",\r\n  \"gender\": \"male\",\r\n  \"skill\": \"string\",\r\n  \"certification\": \"string\",\r\n  \"avatar\": \"string\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1203,7 +1203,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/auth/create-user",
+					"raw": "http://localhost:3000/auth/sign-up",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1211,7 +1211,7 @@
 					"port": "3000",
 					"path": [
 						"auth",
-						"create-user"
+						"sign-up"
 					]
 				}
 			},

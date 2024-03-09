@@ -1,0 +1,163 @@
+# tạo database
+CREATE DATABASE fiverr;
+
+create TABLE LoaiCongViec(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	ten_loai_cong_viec VARCHAR(50) 
+);
+
+INSERT INTO LoaiCongViec (ten_loai_cong_viec) VALUES
+('Lập trình viên'),
+('Dịch thuật'), 
+('Kỹ sư mạng'),
+('Kiểm thử phần mềm'),
+('Kỹ sư thiết kế'),
+('Chuyên viên marketing'),
+('Chuyên viên SEO'),
+('Chuyên viên chăm sóc khách hàng'),
+('Chuyên viên sale'),
+('Hepldesk it');
+
+
+CREATE TABLE NhomCTLCV ( 
+	id INT PRIMARY KEY  AUTO_INCREMENT,
+	ten_nhom varchar(50),
+	hinh_anh VARCHAR(300),
+	ma_loai_cong_viec INT,
+	FOREIGN KEY(ma_loai_cong_viec) REFERENCES LoaiCongViec(id) ON DELETE set null ON UPDATE CASCADE
+	
+);
+
+INSERT INTO NhomCTLCV (id, ten_nhom,hinh_anh,ma_loai_cong_viec) VALUES 
+(1, 'Coding Web ', 'image1.jpg', 1),
+(2, 'Translator', 'image2.jpg', 2),
+(3, 'Grapgic & Design', 'image3.jpg', 5),
+(4, 'Sale', 'image4.jpg', 9),
+(5, 'Coding App', 'image5.jpg', 1),
+(6, 'Support Customer ', 'image6.jpg', 8),
+(7, 'Advertising ', 'image7.jpg', 6);
+
+
+CREATE TABLE ChiTietLoaiCongViec(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	ten_chi_tiet VARCHAR(50),
+	ma_nhom INT,
+	FOREIGN KEY(ma_nhom) REFERENCES NhomCTLCV(id) ON DELETE set null ON UPDATE CASCADE
+);
+
+INSERT INTO ChiTietLoaiCongViec (id, ten_chi_tiet, ma_nhom) VALUES
+(1, 'Front End', 1),
+(2, 'Back End', 1),
+(3, 'Sale Xe ford ', 4),
+(4, 'Sale Cloud', 4),
+(5, 'Translate Book', 2),
+(6, 'Translate Website', 2),
+(7, 'Social Media Advertising', 6),
+(8, 'Visual Effects', 3),
+(9, 'Video Editing', 3),
+(10,'Support Customer', 6),
+(11,'Design Logo', 3),
+(12,'Design t-shirt', 3);
+
+CREATE TABLE NguoiDung(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50),
+	email VARCHAR(50),
+	pass_word VARCHAR(300),
+	phone VARCHAR(50),
+	birth_day VARCHAR(50),
+	gender VARCHAR(10),
+	role VARCHAR(10),
+	skill VARCHAR(20),
+	certification VARCHAR(100),
+	avatar VARCHAR(100)
+	
+);
+
+INSERT INTO NguoiDung (id, name, email, pass_word, phone, birth_day, gender, role, skill, certification,avatar) VALUES
+(1, 'Lê Hoàng Anh', 'user1@example.com', 'password1', '1234567891', '1990-01-01', 'male', 'user', 'Java,FE,BE', 'Java Certification,Toeic 8.0,AWS',null),
+(2, 'Lê Trọng Trường ', 'user2@example.com', 'password2', '1234567892', '1991-02-02', 'male', 'admin', 'Editer,Graphic', 'Đại học mỹ thuật ',null),
+(3, 'Nguyễn Thị Mai Oanh', 'user3@gmail.com', 'password3', '1234567893', '1992-03-03', 'female', 'admin', 'Sale', 'Best Employee vinamik',null),
+(4, 'Ngô Đức Tuấn', 'user4@gmail.com', 'password4', '1234567894', '1993-04-04', 'male', 'user', 'Translate', 'Bằng Ngôn ngử Anh Đại học Ngô Tất Tố',null),
+(5, 'Phạm Thị Mai', 'user5@gmail.com', 'password5', '1234567895', '1994-05-05', 'female', 'user', 'Interpreter', 'interpreter Certification',null),
+(6, 'Ngô Đình Diệm', 'user6@gmail.com', 'password6', '1234567896', '1995-06-06', 'male', 'user', 'Sale', 'sale Certification,bằng quản trị nhà hàng khách sạn',null),
+(7, 'Nguyễn Thị Thu ', 'user7@gmail.com', 'password7', '1234567897', '1996-07-07', 'female', 'user', 'Sale', 'sale Certification',null),
+(8, 'Trần Văn Diệp ', 'user8@gmail.com', 'password8', '1234567898', '1997-08-08', 'male', 'user', 'Tester', 'tester Certification',null),
+(9, 'Bùi Văn Chiến ', 'user9@gmail.com', 'password9', '1234567899', '1998-09-09', 'Male', 'user', 'HTML/CSS', 'Web Design Certification',null),
+(10, 'Lê Thị Mỹ', 'user10@gmail.com', 'password10', '1234567800', '1999-10-10', 'female', 'user', 'Data Analysis', 'Data Analysis Certification',null),
+(11, 'Lê Hoàng Long', 'bulong122@gmail.com', '$2b$04$9WPEx7hQ86ZJikwIEumKwOeGDutCD/AQSrRdaDQEzWz/WCTCCxScq', '0767608842', '05/11/1999', 'male', 'admin', 'Data Analysis', 'Data Analysis Certification','https://ui-avatars.com/api/?name=bb&background=random&size=100');
+
+
+CREATE TABLE CongViec(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	ten_cong_viec VARCHAR(50),
+	danh_gia INT,
+	gia_tien VARCHAR(50),
+	hinh_anh VARCHAR(300),
+	mo_ta VARCHAR(100),
+	mo_ta_ngan VARCHAR(50),
+	sao_cong_viec INT,
+	ma_chi_tiet_loai INT,
+	FOREIGN KEY(ma_chi_tiet_loai) REFERENCES ChiTietLoaiCongViec(id) ON DELETE set null ON UPDATE CASCADE,
+	nguoi_tao INT,
+	FOREIGN KEY(nguoi_tao) REFERENCES NguoiDung(id) ON DELETE set null ON UPDATE CASCADE
+	
+);
+
+INSERT INTO CongViec (id, ten_cong_viec, danh_gia, gia_tien, hinh_anh, mo_ta, mo_ta_ngan, sao_cong_viec, ma_chi_tiet_loai, nguoi_tao) VALUES
+(1, 'design minimal logo brand ', 4, '85', 'image1.jpg', 'thiết kế logo cho công ty abc', 'thiết kế logo', 5, 11, 2),
+(2, 'Sale siêu xe Ford', 3, '85', 'image2.jpg', 'Sale siêu xe cho công ty Ford', 'Sale ford', 4, 3, 2),
+(3, 'Sale cloud đám mây  ', 5, '85', 'image3.jpg', 'cần sale dịch vụ cloud', 'sale cloud', 5, 4, 2),
+(4, 'Thiết kế áo cho yame', 4, '900', 'image4.jpg', 'cùng đội ngũ thiết kế áo cho yame', 'design áo', 4, 12, 2),
+(5, 'Dịch thuật sách harrypotter', 3, '700', 'image5.jpg', 'Cùng team dịch thuật harrypotter', 'dịch thuật harrypotter', 3, 5, 2),
+(6, 'Font end angular,reactjs', 5, '1100', 'image6.jpg', 'cần dev FE công ty ABC ', 'làm html/css theo yêu cầu KH', 5, 1, 2),
+(7, 'Back end nodejs,mongoDB', 4, '950', 'image7.jpg', 'BE web Shoppe', ' BE Shoppe', 4, 2, 2),
+(8, 'Lên plan quảng cáo cho tiktok cho công ty nestie', 3, '750', 'image8.jpg', 'Lên plan quảng cáo cho tiktok cho công ty nestie', 'Lên plan quảng cáo cho tiktok', 3, 7, 2),
+(9, 'Chăm sóc Khách hàng Shoppe', 5, '1300', 'image9.jpg', 'Chăm sóc Khách hàng Shoppe', 'Chăm sóc Khách hàng Shoppe', 5, 10, 2),
+(10, 'Chăm sóc khách hàng lazada', 4, '980', 'image10.jpg', 'Chăm sóc khách hàng lazada', 'Chăm sóc khách hàng lazada', 4, 10, 2);
+
+CREATE TABLE ThueCongViec(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	ma_cong_viec INT,
+	FOREIGN KEY(ma_cong_viec) REFERENCES CongViec(id) ON DELETE set null ON UPDATE CASCADE,
+	ma_nguoi_thue INT,
+	FOREIGN KEY(ma_nguoi_thue) REFERENCES NguoiDung(id) ON DELETE set null ON UPDATE CASCADE,
+	ngay_thue DATETIME,
+	hoan_thanh BOOLEAN
+	
+);
+
+INSERT INTO ThueCongViec (id, ma_cong_viec, ma_nguoi_thue, ngay_thue, hoan_thanh) VALUES
+(1, 1, 2, '2024-02-23 10:00:00', 1),
+(2, 2, 6, '2024-02-24 12:30:00', 0),
+(3, 3, 7, '2024-02-25 15:45:00', 1),
+(4, 4, 2, '2024-02-26 09:15:00', 1),
+(5, 5, 4, '2024-01-27 11:30:00', 1),
+(6, 1, 2, '2024-02-23 10:00:00', 1),
+(7, 2, 6, '2024-02-24 12:30:00', 0),
+(8, 3, 7, '2024-02-25 15:45:00', 1),
+(9, 4, 2, '2024-02-26 09:15:00', 1),
+(10, 5, 4, '2024-01-27 11:30:00', 1),
+(11, 6, 9, '2024-03-29 11:30:00', 1),
+(12, 7, 4, '2024-02-27 11:30:00', 1),
+(13, 8, 10, '2024-05-28 11:30:00', 1),
+(14, 9, 8, '2024-09-27 11:30:00', 1),
+(15, 10, 4, '2024-05-27 11:30:00', 1);
+
+CREATE TABLE BinhLuan(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	ma_cong_viec INT,
+	FOREIGN KEY(ma_cong_viec) REFERENCES CongViec(id),
+	ma_nguoi_binh_luan INT,
+	FOREIGN KEY(ma_nguoi_binh_luan) REFERENCES NguoiDung(id) ON DELETE set null ON UPDATE CASCADE,
+	ngay_binh_luan DATETIME,
+	noi_dung VARCHAR(255),
+	sao_binh_luan INT
+);
+
+INSERT INTO BinhLuan (ma_cong_viec, ma_nguoi_binh_luan, ngay_binh_luan, noi_dung, sao_binh_luan) VALUES
+(1, 1, '2024-02-23 10:30:00', 'ok', 4),
+(2, 2, '2024-02-24 13:00:00', 'job ngon', 3),
+(3, 3, '2024-02-25 16:00:00', 'job oke', 5),
+(4, 4, '2024-02-26 09:30:00', 'Tuyệt vời', 4),
+(5, 5, '2024-02-27 12:00:00', 'Phúc lợi tốt', 3);
