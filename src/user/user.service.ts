@@ -10,7 +10,17 @@ export class UserService {
   prisma = new PrismaClient();
   async create(body: CreateUserDto) {
     try {
-      let { email, pass_word, name } = body;
+      let {
+        email,
+        pass_word,
+        name,
+        role,
+        phone,
+        birth_day,
+        gender,
+        skill,
+        certification,
+      } = body;
       let checkEmail = await this.prisma.nguoiDung.findFirst({
         where: {
           email: email,
@@ -21,17 +31,23 @@ export class UserService {
         let encodePass = bcrypt.hashSync(pass_word, 2);
         let newAvatar = initAvatar(name);
         let newUser = {
-          ...body,
-          avatar: newAvatar,
-          role: 'user',
+          email,
           pass_word: encodePass,
+          name,
+          role,
+          phone,
+          birth_day,
+          gender,
+          skill,
+          certification,
+          avatar: newAvatar,
         };
         await this.prisma.nguoiDung.create({
           data: newUser,
         });
         return {
           status: 200,
-          message: 'Signup successfully',
+          message: 'Created user successfully',
         };
       } else {
         return {
@@ -48,7 +64,10 @@ export class UserService {
   }
 
   async update(body: UpdateUserDto, id: number): Promise<any> {
-    let updateUser = { ...body };
+    let { pass_word, name } = body;
+    let encodePass = bcrypt.hashSync(pass_word, 2);
+    let newAvatar = initAvatar(name);
+    let updateUser = { ...body, pass_word: encodePass, avatar: newAvatar };
     await this.prisma.nguoiDung.update({
       where: {
         id: id,
@@ -147,12 +166,31 @@ export class UserService {
   }
 
   async remove(id: number): Promise<any> {
-    await this.prisma.nguoiDung.delete({
+    try {
+      await this.prisma.nguoiDung.delete({
+        where: {
+          id: id,
+        },
+      });
+
+      return `delete user ${id} successfull! `;
+    } catch (error) {
+      return error;
+    }
+  }
+  async upload(
+    filename: string,
+    id: number,
+    updateUserDto: UpdateUserDto,
+  ): Promise<string> {
+    let upload = { ...updateUserDto };
+    upload.avatar = filename;
+    await this.prisma.nguoiDung.update({
       where: {
         id: id,
       },
+      data: upload,
     });
-
-    return `delete user ${id} successfull! `;
+    return `Upload avatar id:${id} success !`;
   }
 }
